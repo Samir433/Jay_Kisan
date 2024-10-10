@@ -1,5 +1,5 @@
 ##create virtual env
-py -m venev .venv
+py -m venv .venv
 
 ##activate virtual env
 .venv/Scripts/activate
