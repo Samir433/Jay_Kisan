@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Farmer Input Form</title>
+    <link rel="stylesheet" href="{% static 'post/style.css' %}" />
+  </head>
+  <body>
+    <h1>Farm Inputs Selection</h1>
+    <form method="POST" action="{% url 'homepage' %}">
+      {% csrf_token %}
+      <label for="soil_ph">Soil pH:</label>
+      <input type="text" id="soil_ph" name="soil_ph" /><br /><br />
+
+      <label for="season">Season:</label>
+      <select id="season" name="season">
+        <option value="summer">Summer</option>
+        <option value="winter">Winter</option>
+        <option value="monsoon">Monsoon</option></select
+      ><br /><br />
+
+      <label for="prev_crop">Previous Crop:</label>
+      <input type="text" id="prev_crop" name="prev_crop" /><br /><br />
+
+      <label for="location">Location:</label>
+      <input type="text" id="location" name="location" /><br /><br />
+
+      <label for="current_crop">Current Planned Crop:</label>
+      <input type="text" id="current_crop" name="current_crop" /><br /><br />
+
+      <label for="water_availability">Water Availability (liters):</label>
+      <input
+        type="number"
+        id="water_availability"
+        name="water_availability"
+      /><br /><br />
+
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>

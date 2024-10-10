@@ -1,0 +1,17 @@
+##create virtual env
+py -m venev .venv
+
+##activate virtual env
+.venv/Scripts/activate
+
+
+py -m pip install _u pip
+
+##create new project
+django-admin startproject myProject
+
+
+py manage.py startapp post
+
+## Runserver Django appplicxation
+py .\manage.py runserver
