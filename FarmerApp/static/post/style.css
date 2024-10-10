@@ -1,0 +1,131 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2;
+}
+
+.navbar {
+  background: linear-gradient(135deg, #6a82fb, #fc5c7d); /* New color gradient */
+  padding: 15px;
+}
+
+.navbar-brand {
+  font-size: 24px;
+  color: #fff !important;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 180px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #c7e7b1, #9abc71);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.card h5 {
+  font-size: 20px;
+  color: #2f3e2f;
+  font-weight: 600;
+  position: relative;
+  padding-right: 40px; /* Add padding to the right to give space for the arrow */
+}
+
+.arrow {
+  font-size: 24px;
+  color: #2f3e2f;
+  position: absolute;
+  right: 10px; /* Adjust this value as needed */
+  top: 50%; /* Center the arrow vertically */
+  transform: translateY(-50%); /* Adjust vertical alignment */
+}
+
+.card:hover {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #9abc71, #77a960);
+}
+
+/* Responsive layout for Android-sized screens */
+@media (max-width: 767px) {
+  .card {
+    height: 150px;
+  }
+
+  .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 30px; /* Increased padding */
+  max-width: 400px; /* Adjust max-width as needed */
+  width: 300px; /* Set a fixed width for a rectangular shape */
+  margin: 100px auto;
+  text-align: center;
+}
+
+.btn-ok {
+  background-color: #3a6621;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 15px; /* Add space between input and button */
+}
+
+.close-btn {
+  float: right;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.popup h4 {
+  font-size: 24px;
+  color: #3a6621;
+  margin-bottom: 10px;
+}
+
+.btn-submit {
+  background-color: #3a6621;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn-submit:hover {
+  background-color: #2f4e1f;
+}
+
+.input-value {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #2f3e2f; /* Match card text color */
+}
+#submitAll {
+     margin-top: 20px; /* Margin for spacing */
+     display: block; /* Center the button */
+     width: 200px; /* Set a fixed width for the button */
+     margin-left: auto; /* Align to the center */
+     margin-right: auto; /* Align to the center */
+}
