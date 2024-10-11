@@ -1,131 +1,283 @@
 body {
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f2f2f2;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url("static/images/bg1.jpg") no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
 }
 
+/* Dark overlay */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+}
+
+/* Ensure that page content appears above the overlay */
+.navbar, .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Popup styling - Ensure popup appears on top */
+.popup {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 10;
+}
+
+/* Popup content styling */
+.popup-content {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 400px;
+    width: 300px;
+    margin: 100px auto;
+    text-align: center;
+    z-index: 11;
+}
+
+/* Transparent navbar */
 .navbar {
-  background: linear-gradient(135deg, #6a82fb, #fc5c7d); /* New color gradient */
-  padding: 15px;
+    background: none;
+    padding: 15px 20px;
 }
 
+/* Navbar brand styling */
 .navbar-brand {
-  font-size: 24px;
-  color: #fff !important;
+    font-family: 'Georgia', serif;
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
 }
 
+/* Adjusted span for brand text */
+.brand-text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffffff !important;
+    margin-left: 8px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    position: relative;
+}
+
+/* Modern underline effect */
+.brand-text::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background: #ff0000;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+/* Increase font size on hover */
+.brand-text:hover {
+    font-size: 2.2rem;
+    text-shadow: 2px 2px 4px rgba(0, 128, 0, 0.7);
+}
+
+/* Scale the underline on hover */
+.brand-text:hover::after {
+    transform: scaleX(1);
+}
+
+/* Style for the logo image */
+.navbar-brand img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+/* Navbar link styling */
+.navbar-nav .nav-item .nav-link {
+    color: #ffffff;
+    font-size: 1.25rem;
+    margin-left: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #ffeb3b;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+/* Profile image styling */
+.profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Adjust dropdown styling if needed */
+.dropdown-menu {
+    background-color: #ffffff;
+    border-radius: 8px;
+    border: none;
+    padding: 10px 0;
+}
+
+.dropdown-item {
+    font-size: 0.9rem;
+    color: #333;
+    padding: 8px 20px;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(106, 130, 251, 0.1);
+}
+
+/* Cards */
 .card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  height: 180px;
-  border-radius: 8px;
-  background: linear-gradient(135deg, #c7e7b1, #9abc71);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  transition: transform 0.3s ease, background-color 0.3s ease;
+    display: flex;
+    flex-direction: column; /* Keep content stacked */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 300px; /* Fixed width */
+    height: 170px; /* Fixed height */
+    padding: 20px; /* Add padding for spacing */
+    border-radius: 8px;
+    background: linear-gradient(135deg, rgba(199, 231, 177, 0.8), rgba(154, 188, 113, 0.8));
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    margin: 10px; /* Margin for spacing between cards */
 }
 
+/* Text inside card */
 .card h5 {
-  font-size: 20px;
-  color: #2f3e2f;
-  font-weight: 600;
-  position: relative;
-  padding-right: 40px; /* Add padding to the right to give space for the arrow */
+    font-size: 1.5rem; /* Fixed font size */
+    color: #2f3e2f;
+    font-weight: 600;
+    position: relative;
+    padding-right: 40px; /* Space for arrow */
+    word-wrap: break-word; /* Break long words */
+    max-width: 90%; /* Limit width */
 }
 
+/* Arrow styling */
 .arrow {
-  font-size: 24px;
-  color: #2f3e2f;
-  position: absolute;
-  right: 10px; /* Adjust this value as needed */
-  top: 50%; /* Center the arrow vertically */
-  transform: translateY(-50%); /* Adjust vertical alignment */
+    font-size: 24px;
+    color: #2f3e2f;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .card:hover {
-  transform: scale(1.1);
-  background: linear-gradient(135deg, #9abc71, #77a960);
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #9abc71, #77a960);
 }
 
-/* Responsive layout for Android-sized screens */
+/* Responsive layout */
 @media (max-width: 767px) {
-  .card {
-    height: 150px;
-  }
+    .navbar-brand .brand-text {
+        font-size: 1.5rem; /* Smaller font size for smaller screens */
+    }
 
-  .col-md-6 {
-    flex: 0 0 50%;
-    max-width: 50%;
-  }
+    .card {
+        width: 90%; /* Make card width flexible on small screens */
+        height: auto; /* Allow height to adjust */
+    }
+
+    .card h5 {
+        font-size: 1.25rem; /* Smaller text size */
+    }
+
+    .col-md-6 {
+        flex: 0 0 100%; /* Full width for small screens */
+        max-width: 100%; /* Full width for small screens */
+    }
 }
 
-.popup {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+/* Buttons */
+.btn-ok,
+.btn-submit {
+    background-color: #3a6621;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
 }
 
-.popup-content {
-  background-color: #fff;
-  border-radius: 10px;
-  padding: 30px; /* Increased padding */
-  max-width: 400px; /* Adjust max-width as needed */
-  width: 300px; /* Set a fixed width for a rectangular shape */
-  margin: 100px auto;
-  text-align: center;
-}
-
-.btn-ok {
-  background-color: #3a6621;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 5px;
-  margin-top: 15px; /* Add space between input and button */
+.btn-ok:hover,
+.btn-submit:hover {
+    background-color: #2f4e1f;
 }
 
 .close-btn {
-  float: right;
-  font-size: 20px;
-  cursor: pointer;
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
 }
 
 .popup h4 {
-  font-size: 24px;
-  color: #3a6621;
-  margin-bottom: 10px;
-}
-
-.btn-submit {
-  background-color: #3a6621;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-.btn-submit:hover {
-  background-color: #2f4e1f;
+    font-size: 24px;
+    color: #3a6621;
+    margin-bottom: 10px;
 }
 
 .input-value {
     margin-top: 10px;
     font-size: 16px;
-    color: #2f3e2f; /* Match card text color */
+    color: #2f3e2f;
 }
+
 #submitAll {
-     margin-top: 20px; /* Margin for spacing */
-     display: block; /* Center the button */
-     width: 200px; /* Set a fixed width for the button */
-     margin-left: auto; /* Align to the center */
-     margin-right: auto; /* Align to the center */
+    margin-top: 20px;
+    display: block;
+    width: 220px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #4CAF50;
+    color: #ffffff;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#submitAll:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+
+#submitAll:active {
+    transform: translateY(0);
+}
+
+#submitAll:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
