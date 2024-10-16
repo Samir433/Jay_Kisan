@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jay Kisaan - Home</title>
+    <link rel="stylesheet" href="{% static 'post/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'post/home.css' %}">
+    <style>
+        body {
+            background-image: url("{% static 'images/farm2.avif' %}");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            background-size: cover; /* This ensures the image covers the entire background */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a class="navbar-brand" href="{% url 'home' %}">
+            <img src="{% static 'logo.png' %}" alt="Logo">
+            <span>JAY KISAAN</span>
+        </a>
+        <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="{% url 'homepage' %}">Homepage</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Welcome to Jay Kisaan</h1>
+        <p>Your trusted partner in agriculture solutions</p>
+        <a href="#services" class="btn-primary">Explore Services</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <h2>About Us</h2>
+        <p>Learn more about Jay Kisaan and our commitment to sustainable agriculture.</p>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <h2>Our Services</h2>
+        <div class="card">Agri-Tech Solutions</div>
+        <div class="card">Consultation</div>
+        <div class="card">Supply Chain Management</div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Jay Kisaan. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
