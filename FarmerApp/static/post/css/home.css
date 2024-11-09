@@ -1,14 +1,4 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Jay Kisaan - Home</title>
-      <link rel="stylesheet" href="{% static 'post/css/home.css' %}">
-      <!-- Link to external CSS -->
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-      <style>
+
          /* Import Google Font for a clean, professional look */
          @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
          body {
@@ -32,7 +22,7 @@
          background-position: center;
          background-attachment: fixed;
          background-size: cover; /* This ensures the image covers the entire background */
-         filter: blur(5px); /* Adjusted blur amount */
+         filter: blur(3px); /* Adjusted blur amount */
          }
          .content {
          position: relative;
@@ -160,116 +150,3 @@
          padding: 15px;
          }
          }
-      </style>
-   </head>
-   <body>
-      <!-- Blurred Background -->
-      <div class="blur-background"></div>
-      <div class="content">
-         <!-- Navbar -->
-         <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid">
-               <a class="navbar-brand" href="{% url 'home' %}">
-               <img src="{% static 'images/logo.png' %}" alt="Logo" style="height: 40px;">
-               <span class="brand-text">JAY KISAN</span>
-               </a>
-               <button
-                  class="navbar-toggler"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#navbarNav"
-                  aria-controls="navbarNav"
-                  aria-expanded="false"
-                  aria-label="Toggle navigation"
-                  >
-               <span class="navbar-toggler-icon"></span>
-               </button>
-               <div class="collapse navbar-collapse" id="navbarNav">
-                  <ul class="navbar-nav ml-auto">
-                     <!-- ml-auto to push items to the right -->
-                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                     <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                     <li class="nav-item"><a class="nav-link" href="{% url 'form' %}">Form</a></li>
-                     <!-- Profile Dropdown -->
-                     <li class="nav-item dropdown">
-                        <a
-                           class="nav-link dropdown-toggle"
-                           href="#"
-                           id="profileDropdown"
-                           role="button"
-                           data-bs-toggle="dropdown"
-                           aria-expanded="false"
-                           >
-                        <img src="{% static 'images/profile.png' %}" alt="Profile" class="profile-img" style="height: 30px;">
-                        Profile
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
-                           <li><a class="dropdown-item" href="#">Name: Your Name</a></li>
-                           <li><a class="dropdown-item" href="#">Email: your-email@example.com</a></li>
-                           <li><a class="dropdown-item" href="#">Phone: (123) 456-7890</a></li>
-                           <li>
-                              <hr class="dropdown-divider">
-                           </li>
-                           <li><a class="dropdown-item" href="#">Sign Out</a></li>
-                        </ul>
-                     </li>
-                  </ul>
-               </div>
-            </div>
-         </nav>
-         <!-- Hero Section -->
-         <div class="hero">
-            <h1>Welcome to Jay Kisan</h1>
-            <p>Your trusted partner in agriculture.</p>
-            <a href="#services" class="btn btn-primary">Explore Services</a>
-         </div>
-         <!-- About Section -->
-         <section id="about">
-            <h2>About Us</h2>
-            <p>
-               We are dedicated to providing farmers with the resources and support they need to thrive.
-               Our platform offers a range of services tailored to the agricultural community.
-            </p>
-         </section>
-         <!-- Services Section -->
-         <section id="services">
-            <h2>Our Services</h2>
-            <div class="container">
-               <div class="row">
-                  <div class="col-md-4">
-                     <div class="card">
-                        <div class="card-body">
-                           <h5 class="card-title">Consultation</h5>
-                           <p class="card-text">Expert advice on farming practices and crop management.</p>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-md-4">
-                     <div class="card">
-                        <div class="card-body">
-                           <h5 class="card-title">Market Access</h5>
-                           <p class="card-text">Connecting farmers with buyers for better pricing.</p>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-md-4">
-                     <div class="card">
-                        <div class="card-body">
-                           <h5 class="card-title">Training Programs</h5>
-                           <p class="card-text">Workshops and training to enhance farming skills.</p>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </section>
-         <!-- Footer -->
-         <footer class="footer">
-            <p>&copy; 2024 Jay Kisan. All rights reserved.</p>
-         </footer>
-      </div>
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-   </body>
-</html>
